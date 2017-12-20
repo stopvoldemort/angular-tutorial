@@ -8,7 +8,8 @@ import { StateComponent } from './state/state.component';
 import { StateDetailComponent } from './state-detail/state-detail.component';
 
 import { StateService } from './state.service';
-import { MessagesComponent } from './messages/messages.component'
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service'
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { MessagesComponent } from './messages/messages.component'
     BrowserModule,
     FormsModule
   ],
-  providers: [StateService],
+  providers: [StateService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
