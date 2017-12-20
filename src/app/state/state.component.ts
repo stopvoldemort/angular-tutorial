@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { State } from '../state'
+import { STATES } from '../states'
 
 @Component({
   selector: 'app-state',
@@ -13,9 +14,12 @@ export class StateComponent implements OnInit {
   ngOnInit() {
   }
 
-  state: State = {
-    id: 1,
-    name: "Vermont"
+  selectedState: State
+  onSelect(state: State): void {
+    this.selectedState = state;
   }
+
+  states = STATES
+
 
 }
