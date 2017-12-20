@@ -4,14 +4,5 @@
     <span class="badge">{{state.name}}</span>
   </li>
 </ul>
-<div *ngIf="selectedState">
-  <h2>{{ selectedState.name | uppercase }} Details</h2>
-  <div><span>ID: </span>{{ selectedState.id }}</div>
-  <div><span>Name: </span>{{ selectedState.name }}</div>
-  <div><span>Opioid mortality rate: </span>{{ selectedState.crude_rate }}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedState.name" placeholder="name">
-    </label>
-  </div>
-</div>
+
+<app-state-detail [state]="selectedState"></app-state-detail>

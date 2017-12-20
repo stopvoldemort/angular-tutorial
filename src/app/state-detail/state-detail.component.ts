@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { State } from '../state';
 
 @Component({
   selector: 'app-state-detail',
@@ -11,5 +12,7 @@ export class StateDetailComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @Input() state: State;
 
 }

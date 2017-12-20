@@ -7,18 +7,22 @@ import { AppComponent } from './app.component';
 import { StateComponent } from './state/state.component';
 import { StateDetailComponent } from './state-detail/state-detail.component';
 
+import { StateService } from './state.service';
+import { MessagesComponent } from './messages/messages.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     StateComponent,
-    StateDetailComponent
+    StateDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

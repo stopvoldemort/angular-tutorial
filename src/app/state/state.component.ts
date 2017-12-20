@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { State } from '../state'
-import { STATES } from '../states'
+import { StateService } from '../state.service'
 
 @Component({
   selector: 'app-state',
@@ -9,17 +9,24 @@ import { STATES } from '../states'
 })
 export class StateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private stateService: StateService) { }
 
   ngOnInit() {
+    this.getStates()
   }
 
   selectedState: State
+
   onSelect(state: State): void {
     this.selectedState = state;
   }
 
-  states = STATES
+  getStates(): void {
+    this.stateService.getStates()
+      .subscribe(states => this.states = states)
+  }
+
+  states = []
 
 
 }
