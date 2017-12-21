@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { State } from '../state';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { StateService } from '../state.service'
 
 @Component({
   selector: 'app-state-detail',
@@ -8,11 +11,23 @@ import { State } from '../state';
 })
 export class StateDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private stateService: StateService,
+    private location: Location
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getState()
   }
 
-  @Input() state: State;
+  getState(): void {
+    const id: number = +this.route.snapshot.paramMap.get('id')
+    this.stateService.findStateById(id)
+      .subscribe(state => this.state = state)
+  }
+
+  state: State
+
 
 }

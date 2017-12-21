@@ -22,4 +22,8 @@ export class StateService {
     this.messageService.add(str)
   }
 
+  findStateById(id: number): Observable<State> {
+    return of(STATES.find(s => s.id === id))
+  }
+
 }
