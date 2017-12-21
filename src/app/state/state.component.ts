@@ -19,6 +19,7 @@ export class StateComponent implements OnInit {
 
   onSelect(state: State): void {
     this.selectedState = state;
+    this.stateService.selectState(state)
   }
 
   getStates(): void {

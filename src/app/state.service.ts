@@ -12,10 +12,15 @@ export class StateService {
   constructor(private messageService: MessageService) { }
 
   getStates(): Observable<State[]> {
-    const str = this.messageService.reverse("StateService: Fetched State")
+    const str = this.messageService.reverse("StateService: Fetched States")
     this.messageService.add(str)
     console.log("StateService this: ", this)
     return of(STATES)
+  }
+
+  selectState(state): void {
+    const str = `You selected ${state.name}!`
+    this.messageService.add(str)
   }
 
 }
