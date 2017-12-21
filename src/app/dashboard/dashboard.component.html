@@ -1,3 +1,8 @@
-<p>
-  dashboard works!
-</p>
+<h3>Top States</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let state of states" class="col-1-4">
+    <div class="module state">
+      <h4>{{state.name}}</h4>
+    </div>
+  </a>
+</div>

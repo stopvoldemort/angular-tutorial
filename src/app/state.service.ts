@@ -14,7 +14,6 @@ export class StateService {
   getStates(): Observable<State[]> {
     const str = this.messageService.reverse("StateService: Fetched States")
     this.messageService.add(str)
-    console.log("StateService this: ", this)
     return of(STATES)
   }
 
