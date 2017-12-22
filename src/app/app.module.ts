@@ -8,8 +8,6 @@ import { StateComponent } from './state/state.component';
 import { StateDetailComponent } from './state-detail/state-detail.component';
 
 import { StateService } from './state.service';
-import { MessagesComponent } from './messages/messages.component';
-import { MessageService } from './message.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component'
 
@@ -19,7 +17,6 @@ import { DashboardComponent } from './dashboard/dashboard.component'
     AppComponent,
     StateComponent,
     StateDetailComponent,
-    MessagesComponent,
     DashboardComponent
   ],
   imports: [
@@ -27,7 +24,7 @@ import { DashboardComponent } from './dashboard/dashboard.component'
     FormsModule,
     AppRoutingModule
   ],
-  providers: [StateService, MessageService],
+  providers: [StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
