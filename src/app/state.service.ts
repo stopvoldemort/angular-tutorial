@@ -17,9 +17,13 @@ export class StateService {
     return of(STATES)
   }
 
-  selectState(state): void {
-    const str = `You selected ${state.name}!`
-    this.messageService.add(str)
+  getDataTypes(): Observable<string[]> {
+    let types = []
+    if (STATES.length) {
+      const keys = Object.keys(STATES[0])
+      types = keys.filter(k => k!=="id" && k!=="name")
+    }
+    return of(types)
   }
 
   findStateById(id: number): Observable<State> {
