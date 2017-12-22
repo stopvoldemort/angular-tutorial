@@ -8,14 +8,13 @@ import { of } from 'rxjs/observable/of';
 @Injectable()
 export class StateService {
 
-
   getStates(): Observable<State[]> { return of(STATES) }
 
   getDataTypes(): Observable<string[]> {
     let types = []
     if (STATES.length) {
       const keys = Object.keys(STATES[0])
-      types = keys.filter(k => k!=="id" && k!=="name")
+      types = keys.filter(k => k !== "id" && k !== "name")
     }
     return of(types)
   }

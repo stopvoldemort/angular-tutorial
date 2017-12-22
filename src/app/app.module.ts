@@ -9,7 +9,8 @@ import { StateDetailComponent } from './state-detail/state-detail.component';
 
 import { StateService } from './state.service';
 import { AppRoutingModule } from './/app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component'
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component'
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DashboardComponent } from './dashboard/dashboard.component'
     AppComponent,
     StateComponent,
     StateDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
