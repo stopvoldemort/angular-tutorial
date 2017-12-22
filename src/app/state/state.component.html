@@ -1,6 +1,6 @@
 <h2>State's Mortality Rate Due To Opioids</h2>
 <ul>
-  <li *ngFor="let state of states" (click)="onSelect(state)">
+  <li *ngFor="let state of states" (click)="onSelect(state)" routerLink="/states/{{state.id}}">
     <span class="badge">{{state.name}}</span>
   </li>
 </ul>

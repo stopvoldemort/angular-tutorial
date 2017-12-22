@@ -27,6 +27,10 @@ export class StateDetailComponent implements OnInit {
       .subscribe(state => this.state = state)
   }
 
+  goBack(): void {
+    this.location.back()
+  }
+
   state: State
 
 
