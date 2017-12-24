@@ -1,8 +1,8 @@
 <h3>Data</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let type of dataTypes" class="col-1-4" routerLink="/{{type}}">
-    <div class="module">
-      <h4>{{type}}</h4>
+<div>
+  <a *ngFor="let type of dataTypes; let i = index" routerLink="/{{type}}">
+    <div>
+      <h4>{{readableTypes[i]}}</h4>
     </div>
   </a>
 </div>
