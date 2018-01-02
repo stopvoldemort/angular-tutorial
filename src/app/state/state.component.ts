@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class StateComponent implements OnInit {
 
   states = []
-  selectedType = "deaths"
+  selectedType = ""
 
   constructor(
     private location: Location,
@@ -20,11 +20,15 @@ export class StateComponent implements OnInit {
     private stateService: StateService
   ) {}
 
+  // When the component is initialized, gets a list of all the states
   ngOnInit() {
     this.getStates()
-    this.getType()
   }
 
+  // On each change to the page, sets the selectedType based on the URL
+  ngDoCheck() {
+    this.getType()
+  }
 
   getStates(): void {
     this.stateService.getStates()
@@ -35,6 +39,7 @@ export class StateComponent implements OnInit {
     this.selectedType = this.route.snapshot.paramMap.get("type")
   }
 
+  // Turns JS variable names into plain English, i.e. "crudeRate" becomes "Crude Rate"
   humanize(str): string {
     let result = str.replace( /([A-Z])/g, " $1" )
     result = result.split(" ").map(r => r.charAt(0).toUpperCase() + r.slice(1))
