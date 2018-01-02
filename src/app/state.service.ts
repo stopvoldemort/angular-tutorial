@@ -15,6 +15,7 @@ export class StateService {
     if (STATES.length) {
       const keys = Object.keys(STATES[0])
       types = keys.filter(k => k !== "id" && k !== "name" && k!=="year")
+      types.push("states")
     }
     return of(types)
   }

@@ -35,7 +35,10 @@ export class StateComponent implements OnInit {
     this.selectedType = this.route.snapshot.paramMap.get("type")
   }
 
-
-
+  humanize(str): string {
+    let result = str.replace( /([A-Z])/g, " $1" )
+    result = result.split(" ").map(r => r.charAt(0).toUpperCase() + r.slice(1))
+    return result.join(" ")
+  }
 
 }

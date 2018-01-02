@@ -1,8 +1,8 @@
 <h3>Data</h3>
 <div>
   <a *ngFor="let type of dataTypes; let i = index" routerLink="/{{type}}">
-    <div>
-      <h4>{{readableTypes[i]}}</h4>
-    </div>
+    <button type="button" class="btn btn-lg btn-pill btn-primary">
+      {{readableTypes[i]}}
+    </button>
   </a>
 </div>

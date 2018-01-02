@@ -28,16 +28,14 @@ export class DashboardComponent implements OnInit {
     this.stateService.getDataTypes()
       .subscribe(dataTypes => {
         this.dataTypes = dataTypes
-        this.readableTypes = this.humanize(dataTypes)
+        this.readableTypes = this.dataTypes.map(t => this.humanize(t))
       })
   }
 
-  humanize(typesArr): string[] {
-    const types = typesArr.map(type => {
-      const result = type.replace( /([A-Z])/g, " $1" );
-      return result.charAt(0).toUpperCase() + result.slice(1)
-    })
-    return types
+  humanize(str): string {
+    let result = str.replace( /([A-Z])/g, " $1" )
+    result = result.split(" ").map(r => r.charAt(0).toUpperCase() + r.slice(1))
+    return result.join(" ")
   }
 
 }
