@@ -12,6 +12,7 @@ import { StateService } from '../state.service'
 export class StateDetailComponent implements OnInit {
 
   state: State
+  helpers = require('../helpers.ts')
 
   constructor(
     private route: ActivatedRoute,

@@ -1,0 +1,12 @@
+.navbar-grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+}
+
+.navbar-button-container {
+  margin: 0 20px;
+}
+
+.navbar-button {
+  width: 100%;
+}

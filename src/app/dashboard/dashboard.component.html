@@ -1,7 +1,9 @@
-<div>
+<div class="navbar-grid">
   <a *ngFor="let type of dataTypes; let i = index" routerLink="/{{type}}">
-    <button type="button" class="btn btn-lg btn-pill btn-primary">
-      {{readableTypes[i]}}
-    </button>
+    <div class="navbar-button-container">
+      <button type="button" class="grid-element btn btn-lg btn-pill btn-primary navbar-button">
+        {{readableTypes[i]}}
+      </button>
+    </div>
   </a>
 </div>
