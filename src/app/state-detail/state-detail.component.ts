@@ -11,6 +11,8 @@ import { StateService } from '../state.service'
 })
 export class StateDetailComponent implements OnInit {
 
+  state: State
+
   constructor(
     private route: ActivatedRoute,
     private stateService: StateService,
@@ -30,8 +32,5 @@ export class StateDetailComponent implements OnInit {
   goBack(): void {
     this.location.back()
   }
-
-  state: State
-
 
 }

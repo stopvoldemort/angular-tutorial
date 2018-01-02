@@ -4,6 +4,7 @@ import { StateService } from '../state.service'
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+
 @Component({
   selector: 'app-state',
   templateUrl: './state.component.html',
@@ -13,6 +14,7 @@ export class StateComponent implements OnInit {
 
   states = []
   selectedType = ""
+  helpers = require('../helpers.ts')
 
   constructor(
     private location: Location,
@@ -37,13 +39,6 @@ export class StateComponent implements OnInit {
 
   getType(): void {
     this.selectedType = this.route.snapshot.paramMap.get("type")
-  }
-
-  // Turns JS variable names into plain English, i.e. "crudeRate" becomes "Crude Rate"
-  humanize(str): string {
-    let result = str.replace( /([A-Z])/g, " $1" )
-    result = result.split(" ").map(r => r.charAt(0).toUpperCase() + r.slice(1))
-    return result.join(" ")
   }
 
 }

@@ -1,8 +1,8 @@
-<h2 *ngIf="selectedType">{{ humanize(selectedType) }}</h2>
+<h2 *ngIf="selectedType">{{ this.helpers.humanize(selectedType) }}</h2>
 <h2 *ngIf="!selectedType">List of States</h2>
 <ul>
   <li *ngFor="let state of states" routerLink="/states/{{state.id}}">
-    <span>{{ humanize(state.name) }}</span>
-    <span *ngIf="selectedType">: {{ state[selectedType] }}</span>
+    <span>{{ this.helpers.humanize(state.name) }}</span>
+    <span *ngIf="selectedType">: {{ this.helpers.addCommas(state[selectedType]) }}</span>
   </li>
 </ul>
