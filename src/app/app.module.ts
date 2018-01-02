@@ -4,22 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { StateComponent } from './state/state.component';
+import { StateListComponent } from './state-list/state-list.component';
 import { StateDetailComponent } from './state-detail/state-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { StateService } from './state.service';
 import { AppRoutingModule } from './/app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavbarComponent } from './navbar/navbar.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StateComponent,
+    StateListComponent,
     StateDetailComponent,
-    DashboardComponent,
-    NavbarComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

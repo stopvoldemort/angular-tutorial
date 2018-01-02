@@ -7,10 +7,10 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-state',
-  templateUrl: './state.component.html',
-  styleUrls: ['./state.component.css']
+  templateUrl: './state-list.component.html',
+  styleUrls: ['./state-list.component.css']
 })
-export class StateComponent implements OnInit {
+export class StateListComponent implements OnInit {
 
   states = []
   selectedType = ""
